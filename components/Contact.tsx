@@ -54,7 +54,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
+    <section id="contact" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-3 mb-6">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">05 / Contact</span>
         <div className="flex-1 h-px bg-border" />

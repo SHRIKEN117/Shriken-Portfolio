@@ -58,13 +58,58 @@ body {
   }
 
   .card-border {
-    border: 1px solid #1C2530;
-    background: linear-gradient(135deg, rgba(14,20,25,0.9), rgba(8,12,16,0.95));
-    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: linear-gradient(180deg, rgba(14, 20, 25, 0.92), rgba(8, 12, 16, 0.95));
+    backdrop-filter: blur(20px);
+    box-shadow:
+      inset 0 2px 0 rgba(255, 255, 255, 0.07),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.4),
+      0 24px 64px -20px rgba(0, 0, 0, 0.85);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-border:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow:
+      inset 0 2px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.5),
+      0 36px 80px -20px rgba(0, 0, 0, 0.95);
   }
 
   .glow-accent {
     box-shadow: 0 0 30px rgba(0, 212, 255, 0.15), 0 0 80px rgba(0, 212, 255, 0.05);
+  }
+
+  .section-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-glow::before {
+    content: '';
+    position: absolute;
+    top: -8rem;
+    left: -8rem;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 9999px;
+    background: radial-gradient(closest-side, rgba(0, 212, 255, 0.08), transparent 70%);
+    pointer-events: none;
+    filter: blur(1px);
+  }
+
+  .section-glow::after {
+    content: '';
+    position: absolute;
+    bottom: -8rem;
+    right: -8rem;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 9999px;
+    background: radial-gradient(closest-side, rgba(124, 58, 237, 0.1), transparent 70%);
+    pointer-events: none;
+    filter: blur(1px);
   }
 
   .noise-bg {

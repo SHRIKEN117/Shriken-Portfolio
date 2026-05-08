@@ -65,7 +65,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="experience" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
+    <section id="experience" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-3 mb-6">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">03 / Experience</span>
         <div className="flex-1 h-px bg-border" />

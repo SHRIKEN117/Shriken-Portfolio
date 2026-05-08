@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { StackFlowIntegrator } from '@/components/ui/stack-flow-integrator';
 
 const skillGroups = [
   {
@@ -66,7 +65,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
+    <section id="skills" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-3 mb-6">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">04 / Skills</span>
         <div className="flex-1 h-px bg-border" />
@@ -78,10 +77,6 @@ export default function Skills() {
       <p className="reveal font-body text-muted mb-14 max-w-xl">
         Full-stack fluency across frontend, mobile, backend, and cloud—with a growing focus on AI-native development workflows.
       </p>
-
-      <div className="reveal mb-14">
-        <StackFlowIntegrator />
-      </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {skillGroups.map((group, i) => (

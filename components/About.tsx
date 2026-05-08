@@ -38,7 +38,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
+    <section id="about" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
       {/* Section label */}
       <div className="reveal flex items-center gap-3 mb-16">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">01 / About</span>
