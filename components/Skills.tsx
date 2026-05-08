@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import { StackFlowIntegrator } from '@/components/ui/stack-flow-integrator';
 
 const skillGroups = [
   {
@@ -77,6 +78,10 @@ export default function Skills() {
       <p className="reveal font-body text-muted mb-14 max-w-xl">
         Full-stack fluency across frontend, mobile, backend, and cloud—with a growing focus on AI-native development workflows.
       </p>
+
+      <div className="reveal mb-14">
+        <StackFlowIntegrator />
+      </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {skillGroups.map((group, i) => (
