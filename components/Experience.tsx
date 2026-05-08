@@ -7,7 +7,6 @@ const experiences = [
     role: 'Full-Stack Developer Intern',
     period: 'Jun 2025 – Sep 2025',
     location: 'Parsippany, NJ',
-    accent: '#00D4FF',
     current: true,
     bullets: [
       'Architected 15+ reusable React.js components that became the design system foundation, reducing future feature development time by 40%.',
@@ -21,7 +20,6 @@ const experiences = [
     role: 'Flutter Developer',
     period: 'Sep 2023 – Dec 2023',
     location: 'Vadodara, India',
-    accent: '#7C3AED',
     current: false,
     bullets: [
       'Built and shipped a production Flutter insurance application serving motor and health products, driving 35% user engagement growth in the first post-launch month.',
@@ -35,7 +33,6 @@ const experiences = [
     role: 'Web Developer Intern',
     period: 'Jul 2022 – Sep 2022',
     location: 'Vadodara, India',
-    accent: '#F59E0B',
     current: false,
     bullets: [
       'Developed adaptive responsive UIs and REST API integrations across multiple client products, improving user retention metrics post-launch.',
@@ -65,13 +62,13 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="experience" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
+    <section id="experience" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-3 mb-6">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">03 / Experience</span>
         <div className="flex-1 h-px bg-border" />
       </div>
 
-      <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight mb-14">
+      <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight tracking-heading mb-14 text-text">
         Where I've worked
       </h2>
 
@@ -86,32 +83,26 @@ export default function Experience() {
               <div
                 className="absolute left-0 md:left-6 top-1 w-3 h-3 rounded-full border-2 -translate-x-1/2 transition-all duration-300"
                 style={{
-                  borderColor: exp.accent,
-                  background: exp.current ? exp.accent : '#080C10',
-                  boxShadow: exp.current ? `0 0 12px ${exp.accent}` : 'none',
+                  borderColor: '#0071e3',
+                  background: exp.current ? '#0071e3' : '#ffffff',
                 }}
               />
 
               {/* Card */}
-              <div className="card-border rounded-2xl p-6 md:p-8 group hover:border-opacity-40 transition-all duration-300">
+              <div className="card-border p-6 md:p-8 group hover:border-[#c7c7cc] transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-display font-700 text-xl text-text">{exp.company}</h3>
                       {exp.current && (
-                        <span
-                          className="font-mono text-xs px-2 py-0.5 rounded-full"
-                          style={{ background: `${exp.accent}20`, color: exp.accent }}
-                        >
+                        <span className="font-mono text-xs px-2 py-0.5 rounded-pill bg-accent/10 text-accent border border-accent/20">
                           Recent
                         </span>
                       )}
                     </div>
-                    <p className="font-body text-sm" style={{ color: exp.accent }}>
-                      {exp.role}
-                    </p>
+                    <p className="font-body text-sm text-accent">{exp.role}</p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-right shrink-0">
                     <div className="font-mono text-xs text-muted">{exp.period}</div>
                     <div className="font-mono text-xs text-muted mt-0.5">{exp.location}</div>
                   </div>
@@ -120,7 +111,7 @@ export default function Experience() {
                 <ul className="space-y-3 mb-6">
                   {exp.bullets.map((b) => (
                     <li key={b.slice(0, 20)} className="flex items-start gap-3 font-body text-sm text-muted leading-relaxed">
-                      <span style={{ color: exp.accent }} className="mt-0.5 text-xs shrink-0">▸</span>
+                      <span className="text-accent mt-0.5 text-xs shrink-0">▸</span>
                       {b}
                     </li>
                   ))}
@@ -130,7 +121,7 @@ export default function Experience() {
                   {exp.stack.map((s) => (
                     <span
                       key={s}
-                      className="font-mono text-xs px-2.5 py-1 rounded-md border border-border bg-surface text-muted"
+                      className="font-mono text-xs px-2.5 py-1 rounded-md border border-border bg-bg text-muted"
                     >
                       {s}
                     </span>

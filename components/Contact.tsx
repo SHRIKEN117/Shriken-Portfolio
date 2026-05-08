@@ -54,33 +54,25 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
+    <section id="contact" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-3 mb-6">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">05 / Contact</span>
         <div className="flex-1 h-px bg-border" />
       </div>
 
       {/* Big CTA block */}
-      <div className="reveal card-border rounded-3xl p-10 md:p-16 relative overflow-hidden">
-        {/* Background glow */}
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 60% 60% at 50% 100%, #00D4FF, transparent)',
-          }}
-        />
-
-        <div className="relative text-center max-w-2xl mx-auto">
-          <div className="reveal font-mono text-xs text-accent tracking-widest uppercase mb-4">
+      <div className="reveal card-border p-10 md:p-16">
+        <div className="text-center max-w-2xl mx-auto">
+          <div className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
             Open to opportunities
           </div>
-          <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight mb-6">
-            Let's build something
-            <span className="block text-gradient">worth shipping</span>
+          <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight tracking-heading mb-6 text-text">
+            Let&apos;s build something
+            <span className="block text-muted font-500">worth shipping</span>
           </h2>
           <p className="reveal reveal-delay-1 font-body text-muted text-lg leading-relaxed mb-10">
-            I'm actively seeking full-time software engineering roles starting Summer 2026. 
-            Remote, hybrid, or relocation — let's talk if your team values clean code, fast iteration, 
+            I'm actively seeking full-time software engineering roles starting Summer 2026.
+            Remote, hybrid, or relocation — let's talk if your team values clean code, fast iteration,
             and products that make a real difference.
           </p>
 
@@ -97,7 +89,7 @@ export default function Contact() {
                 <span className="text-muted group-hover:text-accent transition-colors">{l.icon}</span>
                 <div className="text-left">
                   <div className="font-mono text-xs text-muted group-hover:text-accent transition-colors">{l.label}</div>
-                  <div className="font-body text-sm text-text group-hover:text-white transition-colors">{l.value}</div>
+                  <div className="font-body text-sm text-text">{l.value}</div>
                 </div>
               </a>
             ))}
@@ -105,7 +97,7 @@ export default function Contact() {
 
           <a
             href="mailto:shrikenpatel@gmail.com"
-            className="reveal reveal-delay-3 inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-accent text-bg font-display font-600 hover:bg-white transition-all duration-200 hover:shadow-[0_0_40px_rgba(0,212,255,0.4)]"
+            className="reveal reveal-delay-3 inline-flex items-center gap-2 px-8 py-4 rounded-pill bg-accent text-white font-body font-500 hover:bg-[#0077ed] transition-colors duration-200"
           >
             Send me a message
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

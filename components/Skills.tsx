@@ -5,43 +5,36 @@ const skillGroups = [
   {
     label: 'Languages',
     icon: '< />',
-    accent: '#00D4FF',
     skills: ['TypeScript', 'JavaScript', 'Python', 'Dart', 'Java', 'SQL', 'HTML/CSS', 'R'],
   },
   {
     label: 'Frontend & Mobile',
     icon: '◻',
-    accent: '#7C3AED',
     skills: ['React.js', 'Next.js', 'Flutter', 'Tailwind CSS', 'Figma'],
   },
   {
     label: 'Backend & APIs',
     icon: '⬡',
-    accent: '#00D4FF',
     skills: ['Node.js', 'Express.js', 'Django', 'REST APIs', 'JWT'],
   },
   {
     label: 'Databases',
     icon: '◈',
-    accent: '#7C3AED',
     skills: ['PostgreSQL', 'MongoDB', 'Firebase', 'Supabase', 'DynamoDB'],
   },
   {
     label: 'Cloud & DevOps',
     icon: '☁',
-    accent: '#F59E0B',
     skills: ['AWS EC2', 'AWS S3', 'AWS Lambda', 'Docker', 'Git/GitHub'],
   },
   {
     label: 'AI & Data',
     icon: '◉',
-    accent: '#F59E0B',
     skills: ['TensorFlow', 'Keras', 'Pandas', 'Seaborn', 'Tableau', 'Power BI'],
   },
   {
     label: 'Tooling',
     icon: '⚙',
-    accent: '#00D4FF',
     skills: ['Postman', 'Windsurf IDE', 'Figma', 'Prompt Engineering'],
   },
 ];
@@ -65,13 +58,13 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
+    <section id="skills" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-3 mb-6">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">04 / Skills</span>
         <div className="flex-1 h-px bg-border" />
       </div>
 
-      <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight mb-4">
+      <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight tracking-heading mb-4 text-text">
         Tech I work with
       </h2>
       <p className="reveal font-body text-muted mb-14 max-w-xl">
@@ -82,23 +75,14 @@ export default function Skills() {
         {skillGroups.map((group, i) => (
           <div
             key={group.label}
-            className={`reveal reveal-delay-${(i % 3) + 1} card-border rounded-2xl p-6 group hover:shadow-lg transition-all duration-300`}
-            style={
-              { '--group-accent': group.accent } as React.CSSProperties
-            }
+            className={`reveal reveal-delay-${(i % 3) + 1} card-border p-6 group hover:border-[#c7c7cc] transition-all duration-300`}
           >
             {/* Header */}
             <div className="flex items-center gap-3 mb-4">
-              <span
-                className="font-mono text-sm w-8 h-8 flex items-center justify-center rounded-lg"
-                style={{ color: group.accent, background: `${group.accent}15` }}
-              >
+              <span className="font-mono text-sm w-8 h-8 flex items-center justify-center rounded-lg text-accent bg-accent/10">
                 {group.icon}
               </span>
-              <h3
-                className="font-display font-600 text-sm tracking-wide uppercase"
-                style={{ color: group.accent }}
-              >
+              <h3 className="font-display font-600 text-sm tracking-wide uppercase text-accent">
                 {group.label}
               </h3>
             </div>
@@ -108,18 +92,7 @@ export default function Skills() {
               {group.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="font-mono text-xs px-2.5 py-1 rounded-lg border border-border text-muted hover:text-text hover:border-opacity-60 transition-all duration-150 cursor-default"
-                  style={
-                    { '--hover-color': group.accent } as React.CSSProperties
-                  }
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = group.accent + '60';
-                    (e.currentTarget as HTMLElement).style.color = group.accent;
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = '';
-                    (e.currentTarget as HTMLElement).style.color = '';
-                  }}
+                  className="font-mono text-xs px-2.5 py-1 rounded-lg border border-border text-muted hover:text-accent hover:border-accent/40 transition-all duration-150 cursor-default"
                 >
                   {skill}
                 </span>

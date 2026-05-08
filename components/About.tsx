@@ -38,8 +38,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
-      {/* Section label */}
+    <section id="about" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-3 mb-16">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">01 / About</span>
         <div className="flex-1 h-px bg-border" />
@@ -48,22 +47,22 @@ export default function About() {
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         {/* Left: Text */}
         <div>
-          <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight mb-6">
+          <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight tracking-heading mb-6 text-text">
             Building things that
-            <span className="block text-gradient">actually work at scale</span>
+            <span className="block">actually work at scale</span>
           </h2>
           <p className="reveal reveal-delay-1 font-body text-muted text-lg leading-relaxed mb-5">
-            I'm a Computer Science graduate student at Pace University (MS, May 2026) with three years of hands-on 
-            engineering across startups and product teams. My work sits at the intersection of 
+            I'm a Computer Science graduate student at Pace University (MS, May 2026) with three years of hands-on
+            engineering across startups and product teams. My work sits at the intersection of
             performance, developer experience, and user delight.
           </p>
           <p className="reveal reveal-delay-2 font-body text-muted leading-relaxed mb-8">
-            At Tiger Advisory, I rebuilt the frontend architecture from scratch—15+ reusable React components, 
-            real-time Supabase auth for 1,000+ users, and a 30% velocity gain through AI-assisted development. 
-            At Parthvitech, I slashed API latency by 53% on a Flutter insurance app that drove 35% engagement 
+            At Tiger Advisory, I rebuilt the frontend architecture from scratch—15+ reusable React components,
+            real-time Supabase auth for 1,000+ users, and a 30% velocity gain through AI-assisted development.
+            At Parthvitech, I slashed API latency by 53% on a Flutter insurance app that drove 35% engagement
             growth in its first month. I work best in cross-functional teams where I can own problems end-to-end.
           </p>
-          <div className="reveal reveal-delay-3 flex flex-wrap gap-3">
+          <div className="reveal reveal-delay-3 flex flex-wrap gap-2">
             {['React.js', 'Flutter', 'Node.js', 'AWS', 'TypeScript', 'Firebase'].map((t) => (
               <span
                 key={t}
@@ -80,7 +79,7 @@ export default function About() {
           {traits.map((t, i) => (
             <div
               key={t.title}
-              className={`reveal reveal-delay-${i + 1} card-border rounded-2xl p-6 group hover:border-accent/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,212,255,0.06)]`}
+              className={`reveal reveal-delay-${i + 1} card-border p-6 group hover:border-[#c7c7cc] transition-all duration-300`}
             >
               <div className="flex items-start gap-4">
                 <div className="text-2xl mt-0.5">{t.icon}</div>
@@ -95,12 +94,12 @@ export default function About() {
           ))}
 
           {/* Education callout */}
-          <div className="reveal reveal-delay-4 card-border rounded-2xl p-6 border-l-2 border-l-accent">
+          <div className="reveal reveal-delay-4 card-border p-6 border-l-2 border-l-accent">
             <div className="font-mono text-xs text-accent mb-2 uppercase tracking-widest">Education</div>
             <div className="font-display font-600 text-text">Pace University, New York</div>
             <div className="font-body text-sm text-muted">M.S. Computer Science · GPA 3.8 · May 2026</div>
             <div className="mt-2 font-body text-xs text-muted">
-              B.S. Computer Science · Parul Institute of Engineering & Technology
+              B.S. Computer Science · Parul Institute of Engineering &amp; Technology
             </div>
           </div>
         </div>

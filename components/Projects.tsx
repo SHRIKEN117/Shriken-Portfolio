@@ -16,7 +16,6 @@ const projects = [
       'Real-time progress tracking with analytics',
       'JWT-secured REST API + React Context state',
     ],
-    accent: '#00D4FF',
     featured: true,
   },
   {
@@ -33,7 +32,6 @@ const projects = [
       'Client-side routing with lazy loading',
       'Mobile-first, WCAG-compliant design',
     ],
-    accent: '#7C3AED',
     featured: true,
   },
   {
@@ -50,45 +48,26 @@ const projects = [
       'Reusable widget component library',
       'Collaborative QA-to-deployment pipeline',
     ],
-    accent: '#F59E0B',
     featured: false,
   },
 ];
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   return (
-    <div
-      className={`reveal reveal-delay-${index + 1} group relative rounded-2xl overflow-hidden card-border hover:border-opacity-50 transition-all duration-500`}
-      style={
-        {
-          '--card-accent': project.accent,
-        } as React.CSSProperties
-      }
-    >
-      {/* Top accent bar */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px opacity-60 group-hover:opacity-100 transition-opacity"
-        style={{ background: `linear-gradient(90deg, transparent, ${project.accent}, transparent)` }}
-      />
-
-      {/* Featured badge */}
-      {project.featured && (
-        <div
-          className="absolute top-4 right-4 font-mono text-xs px-2 py-1 rounded-md"
-          style={{ background: `${project.accent}20`, color: project.accent, border: `1px solid ${project.accent}40` }}
-        >
-          Featured
-        </div>
-      )}
-
+    <div className={`reveal reveal-delay-${index + 1} card-border group hover:border-[#c7c7cc] transition-all duration-300`}>
       <div className="p-7">
-        {/* Tag */}
-        <div className="font-mono text-xs mb-3" style={{ color: project.accent }}>
-          {project.tag}
+        {/* Tag + Featured badge */}
+        <div className="flex items-center justify-between mb-3">
+          <div className="font-mono text-xs text-accent">{project.tag}</div>
+          {project.featured && (
+            <span className="font-mono text-xs px-2 py-1 rounded-pill bg-accent/10 text-accent border border-accent/20">
+              Featured
+            </span>
+          )}
         </div>
 
         {/* Title */}
-        <h3 className="font-display font-700 text-2xl text-text mb-1 group-hover:text-white transition-colors">
+        <h3 className="font-display font-700 text-2xl text-text mb-1 group-hover:text-accent transition-colors duration-200">
           {project.title}
         </h3>
         <p className="font-body text-sm text-muted mb-4">{project.subtitle}</p>
@@ -100,7 +79,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         <ul className="space-y-2 mb-7">
           {project.highlights.map((h) => (
             <li key={h} className="flex items-start gap-2 font-body text-sm text-muted">
-              <span style={{ color: project.accent }} className="mt-0.5 text-xs">▸</span>
+              <span className="text-accent mt-0.5 text-xs shrink-0">▸</span>
               {h}
             </li>
           ))}
@@ -111,7 +90,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           {project.stack.map((s) => (
             <span
               key={s}
-              className="font-mono text-xs px-2.5 py-1 rounded-md border border-border bg-surface text-muted"
+              className="font-mono text-xs px-2.5 py-1 rounded-md border border-border bg-bg text-muted"
             >
               {s}
             </span>
@@ -141,14 +120,14 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" ref={ref} className="section-glow py-28 max-w-6xl mx-auto px-6">
+    <section id="projects" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-3 mb-6">
         <span className="font-mono text-xs text-accent tracking-widest uppercase">02 / Projects</span>
         <div className="flex-1 h-px bg-border" />
       </div>
 
       <div className="reveal mb-12">
-        <h2 className="font-display font-700 text-4xl sm:text-5xl leading-tight mb-4">
+        <h2 className="font-display font-700 text-4xl sm:text-5xl leading-tight tracking-heading mb-4 text-text">
           Things I've built
         </h2>
         <p className="font-body text-muted max-w-xl">
