@@ -23,22 +23,27 @@ export default function Nav() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? 'rgba(0,0,0,0.92)' : 'rgba(0,0,0,0.6)',
+        background: scrolled ? 'rgba(39,39,42,0.95)' : 'rgba(39,39,42,0.7)',
         backdropFilter: 'blur(20px)',
-        borderBottom: scrolled ? '1px solid #333333' : '1px solid transparent',
+        borderBottom: scrolled
+          ? 'rgba(255,255,255,0.08) 0px 0px 0px 1px'
+          : '1px solid transparent',
+        boxShadow: scrolled
+          ? 'rgba(255,255,255,0.06) 0px -1px 0px 0px inset'
+          : 'none',
       }}
     >
       <nav className="max-w-[1200px] mx-auto px-6 h-12 flex items-center justify-between">
-        <a href="#" className="font-body font-medium text-sm tracking-tight text-white">
-          SP<span className="text-muted">&nbsp;/&nbsp;dev</span>
+        <a href="#" className="font-body font-medium text-sm text-white tracking-tight">
+          SP<span className="text-[#6e727a]">&nbsp;/&nbsp;dev</span>
         </a>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-7">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-body text-xs text-[#c0c0c0] hover:text-white transition-colors duration-200 tracking-wide"
+                className="font-body text-sm text-[#abafb4] hover:text-white transition-colors duration-150"
               >
                 {l.label}
               </a>
@@ -47,7 +52,7 @@ export default function Nav() {
           <li>
             <a
               href="mailto:shrikenpatel@gmail.com"
-              className="font-body text-xs px-5 py-2 rounded-pill bg-[#f5f5f0] text-black font-medium hover:opacity-90 transition-opacity duration-200"
+              className="btn-primary text-xs px-4 py-2"
             >
               Hire Me
             </a>
@@ -66,24 +71,27 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="md:hidden border-t border-[#333333] bg-black px-6 py-6">
-          <ul className="flex flex-col gap-6">
+        <div
+          className="md:hidden px-6 py-6"
+          style={{
+            background: '#27272a',
+            borderTop: '1px solid rgba(255,255,255,0.06)',
+          }}
+        >
+          <ul className="flex flex-col gap-5">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="font-body text-sm text-[#c0c0c0] hover:text-white transition-colors"
+                  className="font-body text-sm text-[#abafb4] hover:text-white transition-colors"
                 >
                   {l.label}
                 </a>
               </li>
             ))}
             <li>
-              <a
-                href="mailto:shrikenpatel@gmail.com"
-                className="inline-block font-body text-sm px-6 py-2.5 rounded-pill bg-[#f5f5f0] text-black font-medium hover:opacity-90 transition-opacity"
-              >
+              <a href="mailto:shrikenpatel@gmail.com" className="btn-primary text-sm">
                 Hire Me
               </a>
             </li>

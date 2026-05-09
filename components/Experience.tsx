@@ -64,25 +64,32 @@ export default function Experience() {
   return (
     <section id="experience" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-4 mb-6">
-        <span className="font-mono text-xs text-[#999999] tracking-widest uppercase">03 / Experience</span>
-        <div className="flex-1 h-px bg-[#333333]" />
+        <span className="font-mono text-xs text-[#52e1fe] tracking-widest uppercase">03 / Experience</span>
+        <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
       </div>
 
-      <h2 className="reveal font-display text-4xl sm:text-5xl leading-tight mb-14 text-white" style={{ fontWeight: 500, letterSpacing: '-0.025em' }}>
+      <h2
+        className="reveal font-body font-medium text-4xl sm:text-5xl leading-tight mb-14 text-white"
+        style={{ letterSpacing: '-0.025em' }}
+      >
         Where I've worked
       </h2>
 
       <div className="relative">
-        <div className="absolute left-0 md:left-6 top-0 bottom-0 w-px bg-[#333333]" />
+        <div
+          className="absolute left-0 md:left-6 top-0 bottom-0 w-px"
+          style={{ background: 'rgba(255,255,255,0.08)' }}
+        />
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           {experiences.map((exp, i) => (
             <div key={exp.company} className={`reveal reveal-delay-${i + 1} relative pl-8 md:pl-20`}>
               <div
-                className="absolute left-0 md:left-6 top-1 w-2.5 h-2.5 rounded-full border -translate-x-1/2"
+                className="absolute left-0 md:left-6 top-1.5 w-2.5 h-2.5 rounded-full -translate-x-1/2"
                 style={{
-                  borderColor: '#555555',
-                  background: exp.current ? '#ffffff' : '#000000',
+                  background: exp.current ? '#52e1fe' : '#27272a',
+                  border: `1px solid ${exp.current ? '#52e1fe' : 'rgba(255,255,255,0.2)'}`,
+                  boxShadow: exp.current ? '0 0 8px rgba(82,225,254,0.4)' : 'none',
                 }}
               />
 
@@ -93,39 +100,33 @@ export default function Experience() {
                       <h3 className="font-body font-medium text-xl text-white">{exp.company}</h3>
                       {exp.current && (
                         <span
-                          className="font-mono text-xs px-3 py-1 rounded-pill text-white"
-                          style={{ background: 'rgba(200,200,200,0.1)' }}
+                          className="font-mono text-xs px-2.5 py-0.5 rounded-md text-[#52e1fe]"
+                          style={{ background: 'rgba(82,225,254,0.08)', border: '1px solid rgba(82,225,254,0.15)' }}
                         >
                           Recent
                         </span>
                       )}
                     </div>
-                    <p className="font-body text-sm text-[#c0c0c0]">{exp.role}</p>
+                    <p className="font-body text-sm text-[#52e1fe]">{exp.role}</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <div className="font-mono text-xs text-[#999999]">{exp.period}</div>
-                    <div className="font-mono text-xs text-[#999999] mt-0.5">{exp.location}</div>
+                    <div className="font-mono text-xs text-[#6e727a]">{exp.period}</div>
+                    <div className="font-mono text-xs text-[#6e727a] mt-0.5">{exp.location}</div>
                   </div>
                 </div>
 
                 <ul className="space-y-3 mb-6">
                   {exp.bullets.map((b) => (
-                    <li key={b.slice(0, 20)} className="flex items-start gap-3 font-body text-sm text-[#999999] leading-relaxed" style={{ fontWeight: 300 }}>
-                      <span className="text-[#555555] mt-0.5 text-xs shrink-0">—</span>
+                    <li key={b.slice(0, 20)} className="flex items-start gap-3 font-body text-sm text-[#abafb4] leading-relaxed">
+                      <span className="text-[#52e1fe]/40 mt-0.5 shrink-0 text-xs">›</span>
                       {b}
                     </li>
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {exp.stack.map((s) => (
-                    <span
-                      key={s}
-                      className="font-mono text-xs px-3 py-1 rounded-pill text-[#999999]"
-                      style={{ background: 'rgba(200,200,200,0.06)', border: '1px solid #333333' }}
-                    >
-                      {s}
-                    </span>
+                    <span key={s} className="tag">{s}</span>
                   ))}
                 </div>
               </div>

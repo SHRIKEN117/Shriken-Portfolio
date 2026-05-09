@@ -3,15 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --color-midnight-void: #000000;
-  --color-cloud-whisper: #ffffff;
-  --color-slate-dust: #f5f5f0;
-  --color-steel-gray: #202020;
-  --color-mist-gray: #c0c0c0;
-  --color-charcoal-tone: #333333;
-  --color-ash-accent: #999999;
-  --shadow-xl: rgba(0, 0, 0, 0.35) 0px 10px 30px 0px, rgba(255, 255, 255, 0.08) 0px 1px 0px 0px inset;
-  --shadow-lg: rgba(0, 0, 0, 0.15) 0px 4px 20px 0px;
+  --color-carbon: #000000;
+  --color-inkwell: #0f0f10;
+  --color-charcoal: #27272a;
+  --color-porcelain: #ffffff;
+  --color-starlight: #e5e7eb;
+  --color-cloudburst: #abafb4;
+  --color-subtle: #6e727a;
+  --color-skyline: #99a1af;
+  --color-cyber-cyan: #52e1fe;
+  --color-code-orange: #ffb86a;
+  --shadow-subtle: rgba(255, 255, 255, 0.08) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset;
+  --shadow-md: rgba(37, 174, 186, 0.1) 0px 0px 9px 4px;
 }
 
 * {
@@ -25,47 +28,128 @@ html {
 }
 
 body {
-  background-color: #000000;
+  background-color: #27272a;
   color: #ffffff;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(82, 225, 254, 0.2);
   color: #ffffff;
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #000000; }
-::-webkit-scrollbar-thumb { background: #333333; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #555555; }
+::-webkit-scrollbar-track { background: #27272a; }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #52525b; }
 
 @layer utilities {
+  /* Carbon card — #000 bg, inset white glow border */
   .card-border {
-    background: transparent;
-    border-radius: 10px;
-    border: 1px solid #333333;
-    transition: border-color 0.2s ease;
+    background: #000000;
+    border-radius: 12px;
+    box-shadow: rgba(255, 255, 255, 0.08) 0px 0px 0px 1px inset,
+                rgba(255, 255, 255, 0.10) 0px 1px 0px 0px inset;
+    transition: box-shadow 0.2s ease;
   }
 
   .card-border:hover {
-    border-color: #555555;
+    box-shadow: rgba(255, 255, 255, 0.12) 0px 0px 0px 1px inset,
+                rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset;
   }
 
-  .card-surface {
-    background: #202020;
-    border-radius: 10px;
-    border: 1px solid #333333;
+  /* Inkwell card — slightly lighter than carbon */
+  .card-inkwell {
+    background: #0f0f10;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   }
 
-  .badge-lozenge {
-    background: rgba(200, 200, 200, 0.1);
+  /* Translucent elevated card */
+  .card-elevated {
+    background: rgba(23, 23, 23, 0.6);
+    border-radius: 20px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset,
+                rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset;
+  }
+
+  /* Primary action button — white fill */
+  .btn-primary {
+    background: #ffffff;
+    color: #000000;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.88;
+  }
+
+  /* Ghost cyan button */
+  .btn-ghost-cyan {
+    background: transparent;
+    color: #52e1fe;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(82, 225, 254, 0.2);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .btn-ghost-cyan:hover {
+    border-color: rgba(82, 225, 254, 0.4);
+    background: rgba(82, 225, 254, 0.04);
+  }
+
+  /* Ghost default — muted */
+  .btn-ghost {
+    background: transparent;
+    color: #abafb4;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.15s ease;
+  }
+
+  .btn-ghost:hover {
     color: #ffffff;
-    border-radius: 9999px;
-    padding: 6px 14px;
-    font-size: 11px;
-    letter-spacing: 0.05em;
+  }
+
+  /* Monospace badge */
+  .badge-mono {
+    background: transparent;
+    color: #6e727a;
+    font-family: var(--font-jetbrains), monospace;
+    font-size: 12px;
+  }
+
+  /* Tag pill — subtle bg */
+  .tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: #6e727a;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: var(--font-jetbrains), monospace;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.15s ease;
+  }
+
+  .tag:hover {
+    color: #abafb4;
   }
 
   .animate-in {
@@ -81,8 +165,8 @@ body {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 .reveal.visible {

@@ -37,22 +37,25 @@ export default function About() {
   return (
     <section id="about" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
       <div className="reveal flex items-center gap-4 mb-16">
-        <span className="font-mono text-xs text-[#999999] tracking-widest uppercase">01 / About</span>
-        <div className="flex-1 h-px bg-[#333333]" />
+        <span className="font-mono text-xs text-[#52e1fe] tracking-widest uppercase">01 / About</span>
+        <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
       </div>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
         <div>
-          <h2 className="reveal font-display text-4xl sm:text-5xl leading-tight mb-8 text-white" style={{ fontWeight: 500, letterSpacing: '-0.025em' }}>
+          <h2
+            className="reveal font-body font-medium text-4xl sm:text-5xl leading-tight mb-8 text-white"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Building things that
             <span className="block">actually work at scale</span>
           </h2>
-          <p className="reveal reveal-delay-1 font-body text-[#999999] text-lg leading-relaxed mb-5" style={{ fontWeight: 300 }}>
+          <p className="reveal reveal-delay-1 font-body text-[#abafb4] text-lg leading-relaxed mb-5">
             I'm a Computer Science graduate student at Pace University (MS, May 2026) with three years of hands-on
             engineering across startups and product teams. My work sits at the intersection of
             performance, developer experience, and user delight.
           </p>
-          <p className="reveal reveal-delay-2 font-body text-[#999999] leading-relaxed mb-10" style={{ fontWeight: 300 }}>
+          <p className="reveal reveal-delay-2 font-body text-[#abafb4] leading-relaxed mb-10">
             At Tiger Advisory, I rebuilt the frontend architecture from scratch—15+ reusable React components,
             real-time Supabase auth for 1,000+ users, and a 30% velocity gain through AI-assisted development.
             At Parthvitech, I slashed API latency by 53% on a Flutter insurance app that drove 35% engagement
@@ -60,33 +63,30 @@ export default function About() {
           </p>
           <div className="reveal reveal-delay-3 flex flex-wrap gap-2">
             {['React.js', 'Flutter', 'Node.js', 'AWS', 'TypeScript', 'Firebase'].map((t) => (
-              <span
-                key={t}
-                className="font-mono text-xs px-4 py-1.5 rounded-pill border border-[#333333] text-[#999999] hover:text-white hover:border-[#555555] transition-all duration-200 cursor-default"
-                style={{ background: 'rgba(200,200,200,0.04)' }}
-              >
-                {t}
-              </span>
+              <span key={t} className="tag cursor-default">{t}</span>
             ))}
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
           {traits.map((t, i) => (
-            <div
-              key={t.title}
-              className={`reveal reveal-delay-${i + 1} card-border p-6`}
-            >
-              <h3 className="font-body font-medium text-white mb-2">{t.title}</h3>
-              <p className="font-body text-sm text-[#999999] leading-relaxed" style={{ fontWeight: 300 }}>{t.desc}</p>
+            <div key={t.title} className={`reveal reveal-delay-${i + 1} card-border p-5`}>
+              <h3 className="font-body font-medium text-white mb-2 text-sm">{t.title}</h3>
+              <p className="font-body text-sm text-[#abafb4] leading-relaxed">{t.desc}</p>
             </div>
           ))}
 
-          <div className="reveal reveal-delay-4 card-border p-6 border-l-2 border-l-[#c0c0c0]">
-            <div className="font-mono text-xs text-[#c0c0c0] mb-2 uppercase tracking-widest">Education</div>
-            <div className="font-body font-medium text-white">Pace University, New York</div>
-            <div className="font-body text-sm text-[#999999]">M.S. Computer Science · GPA 3.8 · May 2026</div>
-            <div className="mt-2 font-body text-xs text-[#999999]">
+          <div
+            className="reveal reveal-delay-4 card-border p-5"
+            style={{
+              borderLeft: '2px solid #52e1fe',
+              borderRadius: '0 12px 12px 0',
+            }}
+          >
+            <div className="font-mono text-xs text-[#52e1fe] mb-2 uppercase tracking-widest">Education</div>
+            <div className="font-body font-medium text-white text-sm">Pace University, New York</div>
+            <div className="font-body text-sm text-[#abafb4]">M.S. Computer Science · GPA 3.8 · May 2026</div>
+            <div className="mt-2 font-body text-xs text-[#6e727a]">
               B.S. Computer Science · Parul Institute of Engineering &amp; Technology
             </div>
           </div>
