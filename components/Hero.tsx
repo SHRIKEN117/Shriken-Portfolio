@@ -16,25 +16,26 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 bg-bg" id="hero">
+    <section className="relative min-h-screen flex items-center pt-16 bg-black" id="hero">
       <div ref={containerRef} className="max-w-6xl mx-auto px-6 py-24">
         {/* Status badge */}
         <div
           data-delay="0"
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-pill border border-border bg-surface text-xs font-mono text-muted mb-10"
-          style={{ opacity: 0 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-pill font-mono text-xs text-[#c0c0c0] mb-12"
+          style={{ opacity: 0, background: 'rgba(200,200,200,0.1)' }}
         >
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse-slow" />
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse-slow" />
           Available for full-time roles · Summer 2026
         </div>
 
         {/* Name */}
         <h1
           data-delay="100"
-          className="font-display font-700 leading-none tracking-display mb-6 text-text"
+          className="font-display leading-none mb-6 text-white"
           style={{
-            fontSize: 'clamp(56px, 9vw, 96px)',
-            letterSpacing: '-2.11px',
+            fontSize: 'clamp(64px, 11vw, 128px)',
+            letterSpacing: '-0.05em',
+            fontWeight: 500,
             opacity: 0,
           }}
         >
@@ -46,11 +47,11 @@ export default function Hero() {
         {/* Role */}
         <div
           data-delay="200"
-          className="flex items-center gap-3 mb-6"
+          className="flex items-center gap-3 mb-8"
           style={{ opacity: 0 }}
         >
-          <div className="w-8 h-px bg-accent" />
-          <span className="font-mono text-sm text-accent tracking-widest uppercase">
+          <div className="w-8 h-px bg-[#333333]" />
+          <span className="font-mono text-xs text-[#c0c0c0] tracking-widest uppercase">
             Full-Stack &amp; Mobile Engineer
           </span>
         </div>
@@ -58,18 +59,18 @@ export default function Hero() {
         {/* Tagline */}
         <p
           data-delay="300"
-          className="font-body text-xl sm:text-2xl text-muted max-w-2xl leading-relaxed mb-10"
-          style={{ opacity: 0 }}
+          className="font-body text-xl sm:text-2xl text-[#999999] max-w-2xl leading-relaxed mb-12"
+          style={{ opacity: 0, fontWeight: 300 }}
         >
           I architect systems that scale—from real-time authentication serving{' '}
-          <span className="text-text">thousands of users</span> to{' '}
-          <span className="text-text">AI-native mobile apps</span> that cut latency in half.
+          <span className="text-white font-normal">thousands of users</span> to{' '}
+          <span className="text-white font-normal">AI-native mobile apps</span> that cut latency in half.
         </p>
 
         {/* Stats row */}
         <div
           data-delay="350"
-          className="flex flex-wrap gap-8 mb-12"
+          className="flex flex-wrap gap-10 mb-14"
           style={{ opacity: 0 }}
         >
           {[
@@ -79,8 +80,8 @@ export default function Hero() {
             { n: '1K+', label: 'Active Users Served' },
           ].map((s) => (
             <div key={s.label}>
-              <div className="font-display font-700 text-2xl text-accent">{s.n}</div>
-              <div className="font-body text-xs text-muted mt-0.5">{s.label}</div>
+              <div className="font-display text-3xl text-white" style={{ fontWeight: 500, letterSpacing: '-0.03em' }}>{s.n}</div>
+              <div className="font-body text-xs text-[#999999] mt-1 tracking-wide">{s.label}</div>
             </div>
           ))}
         </div>
@@ -93,22 +94,16 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-pill bg-accent text-white font-body font-500 text-sm hover:bg-[#0077ed] transition-colors duration-200"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-pill bg-[#f5f5f0] text-black font-body font-medium text-sm hover:opacity-90 transition-opacity duration-200"
           >
             View My Work
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 16 16"
-              fill="none"
-              className="group-hover:translate-x-0.5 transition-transform"
-            >
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="group-hover:translate-x-0.5 transition-transform">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-pill border border-border text-text font-body font-500 text-sm hover:border-[#c7c7cc] transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-pill border border-white text-white font-body font-medium text-sm hover:bg-white/5 transition-colors duration-200"
           >
             Get in Touch
           </a>
@@ -116,7 +111,7 @@ export default function Hero() {
             href="https://linkedin.com/in/sp117"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-pill border border-border text-muted font-body font-500 text-sm hover:text-text hover:border-[#c7c7cc] transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-pill border border-[#333333] text-[#999999] font-body text-sm hover:text-white hover:border-[#555555] transition-colors duration-200"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -127,7 +122,7 @@ export default function Hero() {
             href="https://github.com/SHRIKEN117"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-pill border border-border text-muted font-body font-500 text-sm hover:text-text hover:border-[#c7c7cc] transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-pill border border-[#333333] text-[#999999] font-body text-sm hover:text-white hover:border-[#555555] transition-colors duration-200"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
@@ -139,12 +134,12 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div
           data-delay="600"
-          className="mt-16 flex items-center gap-2 text-muted text-xs font-mono"
+          className="mt-20 flex items-center gap-2 text-[#999999] text-xs font-mono"
           style={{ opacity: 0 }}
         >
           <div className="flex flex-col items-center gap-1">
-            <div className="w-px h-8 bg-gradient-to-b from-transparent to-border" />
-            <div className="w-1 h-1 rounded-full bg-muted animate-pulse" />
+            <div className="w-px h-8 bg-gradient-to-b from-transparent to-[#333333]" />
+            <div className="w-1 h-1 rounded-full bg-[#999999] animate-pulse" />
           </div>
           <span>scroll to explore</span>
         </div>

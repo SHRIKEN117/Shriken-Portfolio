@@ -9,37 +9,36 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-syne)', 'sans-serif'],
-        body: ['var(--font-dm-sans)', 'sans-serif'],
+        display: ['var(--font-playfair)', 'serif'],
+        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-jetbrains)', 'monospace'],
       },
       colors: {
-        bg: '#f5f5f7',
-        surface: '#ffffff',
-        border: '#e8e8ed',
-        text: '#1d1d1f',
-        muted: '#707070',
-        slate: '#474747',
-        accent: '#0071e3',
-        'accent-link': '#0066cc',
-        caution: '#b64400',
+        bg: '#000000',
+        surface: '#202020',
+        border: '#333333',
+        text: '#ffffff',
+        muted: '#999999',
+        'light-muted': '#c0c0c0',
+        subtle: '#cccccc',
+        'slate-dust': '#f5f5f0',
+        accent: '#c0c0c0',
       },
       borderRadius: {
-        card: '28px',
-        pill: '999px',
+        card: '10px',
+        pill: '9999px',
       },
       letterSpacing: {
-        display: '-2.11px',
-        'heading-lg': '-0.9px',
-        heading: '-0.6px',
-        'heading-sm': '-0.36px',
-        subheading: '-0.2px',
+        display: '-0.05em',
+        'heading-lg': '-0.025em',
+        heading: '-0.02em',
+        'heading-sm': '-0.015em',
+        subheading: '-0.01em',
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',
         'fade-in': 'fadeIn 0.4s ease forwards',
         'pulse-slow': 'pulse 4s ease-in-out infinite',
-        float: 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: {
@@ -49,10 +48,6 @@ module.exports = {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-12px)' },
         },
       },
     },

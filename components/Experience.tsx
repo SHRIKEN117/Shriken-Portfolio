@@ -63,55 +63,55 @@ export default function Experience() {
 
   return (
     <section id="experience" ref={ref} className="py-28 max-w-6xl mx-auto px-6">
-      <div className="reveal flex items-center gap-3 mb-6">
-        <span className="font-mono text-xs text-accent tracking-widest uppercase">03 / Experience</span>
-        <div className="flex-1 h-px bg-border" />
+      <div className="reveal flex items-center gap-4 mb-6">
+        <span className="font-mono text-xs text-[#999999] tracking-widest uppercase">03 / Experience</span>
+        <div className="flex-1 h-px bg-[#333333]" />
       </div>
 
-      <h2 className="reveal font-display font-700 text-4xl sm:text-5xl leading-tight tracking-heading mb-14 text-text">
+      <h2 className="reveal font-display text-4xl sm:text-5xl leading-tight mb-14 text-white" style={{ fontWeight: 500, letterSpacing: '-0.025em' }}>
         Where I've worked
       </h2>
 
       <div className="relative">
-        {/* Timeline line */}
-        <div className="absolute left-0 md:left-6 top-0 bottom-0 w-px bg-border" />
+        <div className="absolute left-0 md:left-6 top-0 bottom-0 w-px bg-[#333333]" />
 
-        <div className="space-y-12">
+        <div className="space-y-10">
           {experiences.map((exp, i) => (
             <div key={exp.company} className={`reveal reveal-delay-${i + 1} relative pl-8 md:pl-20`}>
-              {/* Timeline dot */}
               <div
-                className="absolute left-0 md:left-6 top-1 w-3 h-3 rounded-full border-2 -translate-x-1/2 transition-all duration-300"
+                className="absolute left-0 md:left-6 top-1 w-2.5 h-2.5 rounded-full border -translate-x-1/2"
                 style={{
-                  borderColor: '#0071e3',
-                  background: exp.current ? '#0071e3' : '#ffffff',
+                  borderColor: '#555555',
+                  background: exp.current ? '#ffffff' : '#000000',
                 }}
               />
 
-              {/* Card */}
-              <div className="card-border p-6 md:p-8 group hover:border-[#c7c7cc] transition-all duration-300">
+              <div className="card-border p-6 md:p-8">
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-display font-700 text-xl text-text">{exp.company}</h3>
+                      <h3 className="font-body font-medium text-xl text-white">{exp.company}</h3>
                       {exp.current && (
-                        <span className="font-mono text-xs px-2 py-0.5 rounded-pill bg-accent/10 text-accent border border-accent/20">
+                        <span
+                          className="font-mono text-xs px-3 py-1 rounded-pill text-white"
+                          style={{ background: 'rgba(200,200,200,0.1)' }}
+                        >
                           Recent
                         </span>
                       )}
                     </div>
-                    <p className="font-body text-sm text-accent">{exp.role}</p>
+                    <p className="font-body text-sm text-[#c0c0c0]">{exp.role}</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <div className="font-mono text-xs text-muted">{exp.period}</div>
-                    <div className="font-mono text-xs text-muted mt-0.5">{exp.location}</div>
+                    <div className="font-mono text-xs text-[#999999]">{exp.period}</div>
+                    <div className="font-mono text-xs text-[#999999] mt-0.5">{exp.location}</div>
                   </div>
                 </div>
 
                 <ul className="space-y-3 mb-6">
                   {exp.bullets.map((b) => (
-                    <li key={b.slice(0, 20)} className="flex items-start gap-3 font-body text-sm text-muted leading-relaxed">
-                      <span className="text-accent mt-0.5 text-xs shrink-0">▸</span>
+                    <li key={b.slice(0, 20)} className="flex items-start gap-3 font-body text-sm text-[#999999] leading-relaxed" style={{ fontWeight: 300 }}>
+                      <span className="text-[#555555] mt-0.5 text-xs shrink-0">—</span>
                       {b}
                     </li>
                   ))}
@@ -121,7 +121,8 @@ export default function Experience() {
                   {exp.stack.map((s) => (
                     <span
                       key={s}
-                      className="font-mono text-xs px-2.5 py-1 rounded-md border border-border bg-bg text-muted"
+                      className="font-mono text-xs px-3 py-1 rounded-pill text-[#999999]"
+                      style={{ background: 'rgba(200,200,200,0.06)', border: '1px solid #333333' }}
                     >
                       {s}
                     </span>

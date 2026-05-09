@@ -1,22 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-syne: 'Syne', sans-serif;
-  --font-dm-sans: 'DM Sans', sans-serif;
-  --font-jetbrains: 'JetBrains Mono', monospace;
-
-  /* Apple design tokens */
-  --color-ink: #1d1d1f;
-  --color-graphite: #707070;
-  --color-fog: #f5f5f7;
-  --color-snow: #ffffff;
-  --color-silver-mist: #e8e8ed;
-  --color-azure: #0071e3;
-  --color-cobalt-link: #0066cc;
+  --color-midnight-void: #000000;
+  --color-cloud-whisper: #ffffff;
+  --color-slate-dust: #f5f5f0;
+  --color-steel-gray: #202020;
+  --color-mist-gray: #c0c0c0;
+  --color-charcoal-tone: #333333;
+  --color-ash-accent: #999999;
+  --shadow-xl: rgba(0, 0, 0, 0.35) 0px 10px 30px 0px, rgba(255, 255, 255, 0.08) 0px 1px 0px 0px inset;
+  --shadow-lg: rgba(0, 0, 0, 0.15) 0px 4px 20px 0px;
 }
 
 * {
@@ -30,117 +25,47 @@ html {
 }
 
 body {
-  background-color: #f5f5f7;
-  color: #1d1d1f;
-  font-family: var(--font-dm-sans);
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: rgba(0, 113, 227, 0.18);
-  color: #1d1d1f;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f5f5f7; }
-::-webkit-scrollbar-thumb { background: #d1d1d6; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #a1a1a6; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: #333333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #555555; }
 
 @layer utilities {
-  /* Apple card — white surface on fog canvas, 28px radius, no shadow */
-  .card-apple {
-    background: #ffffff;
-    border-radius: 28px;
-    border: 1px solid #e8e8ed;
-    padding: 28px;
-    transition: border-color 0.2s ease;
-  }
-
-  /* card-border now maps to Apple card style for backward compat */
   .card-border {
-    background: #ffffff;
-    border-radius: 28px;
-    border: 1px solid #e8e8ed;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid #333333;
     transition: border-color 0.2s ease;
   }
 
   .card-border:hover {
-    border-color: #c7c7cc;
+    border-color: #555555;
   }
 
-  /* Fog card — recessed variant for use inside white sections */
-  .card-fog {
-    background: #f5f5f7;
-    border-radius: 28px;
-    border: 1px solid #e8e8ed;
-    padding: 28px;
+  .card-surface {
+    background: #202020;
+    border-radius: 10px;
+    border: 1px solid #333333;
   }
 
-  /* Azure CTA pill — the ONLY filled blue element */
-  .btn-cta {
-    background: #0071e3;
+  .badge-lozenge {
+    background: rgba(200, 200, 200, 0.1);
     color: #ffffff;
-    border-radius: 999px;
-    padding: 8px 20px;
-    font-size: 17px;
-    font-weight: 400;
-    display: inline-flex;
-    align-items: center;
-    transition: background 0.2s ease;
-  }
-
-  .btn-cta:hover {
-    background: #0077ed;
-  }
-
-  /* Ghost pill */
-  .btn-ghost {
-    background: transparent;
-    color: #1d1d1f;
-    border-radius: 999px;
-    border: 1px solid #e8e8ed;
-    padding: 8px 20px;
-    font-size: 17px;
-    font-weight: 400;
-    display: inline-flex;
-    align-items: center;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-
-  .btn-ghost:hover {
-    border-color: #c7c7cc;
-  }
-
-  /* Section band — full-width white band over fog canvas */
-  .band-white {
-    background: #ffffff;
-  }
-
-  /* Display headline — Apple tight tracking */
-  .text-display {
-    font-size: clamp(56px, 8vw, 96px);
-    font-weight: 700;
-    line-height: 1.04;
-    letter-spacing: -2.11px;
-    color: #1d1d1f;
-  }
-
-  .text-gradient {
-    background: linear-gradient(135deg, #1d1d1f 0%, #474747 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Inline link color */
-  .link-cobalt {
-    color: #0066cc;
-    text-decoration: none;
-  }
-
-  .link-cobalt:hover {
-    text-decoration: underline;
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
   }
 
   .animate-in {
@@ -148,21 +73,12 @@ body {
     transform: translateY(20px);
     animation: fadeUp 0.7s ease forwards;
   }
-
-  /* Frosted pill (country selector / overlays) */
-  .frosted-pill {
-    background: rgba(210, 210, 215, 0.64);
-    backdrop-filter: blur(20px);
-    border-radius: 36px;
-    color: rgba(0, 0, 0, 0.56);
-  }
 }
 
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Intersection observer animations */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
