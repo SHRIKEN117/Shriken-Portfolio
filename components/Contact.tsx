@@ -116,12 +116,12 @@ export default function Contact() {
                 href={l.href}
                 target={l.href.startsWith('http') ? '_blank' : undefined}
                 rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group flex items-center gap-3 px-5 py-3 rounded-xl border border-border bg-surface hover:border-accent hover:bg-accent/5 transition-all duration-200"
+                className="group flex items-center gap-3 px-4 py-3 rounded-xl border border-border bg-surface hover:border-accent hover:bg-accent/5 transition-all duration-200"
               >
-                <span className="text-muted group-hover:text-accent transition-colors">{l.icon}</span>
-                <div className="text-left">
+                <span className="shrink-0 text-muted group-hover:text-accent transition-colors">{l.icon}</span>
+                <div className="text-left min-w-0">
                   <div className="font-mono text-xs text-muted group-hover:text-accent transition-colors">{l.label}</div>
-                  <div className="font-body text-sm text-text">{l.value}</div>
+                  <div className="font-body text-xs text-text truncate">{l.value}</div>
                 </div>
               </a>
             ))}
