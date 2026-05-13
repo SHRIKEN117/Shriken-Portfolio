@@ -35,6 +35,22 @@ const projects = [
     featured: true,
   },
   {
+    id: 'fixflow',
+    tag: 'Full-Stack · Capstone',
+    title: 'FixFlow',
+    subtitle: 'Maintenance Management System',
+    description:
+      'A full-stack facility maintenance platform managing the complete ticket lifecycle — from submission through approval, technician assignment, and closure. Features role-based access control, automated SLA enforcement, a financial workflow (estimates → invoices → payments), real-time Socket.io notifications, and HTML email alerts.',
+    stack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Tailwind CSS'],
+    highlights: [
+      'Three-role RBAC (Admin / Technician / User) with guarded status transitions',
+      'Automated SLA sweep every 15 min — flags at-risk and breached tickets',
+      'Full financial workflow: line-item estimates → invoices → payment recording',
+      'Real-time push notifications via Socket.io + HTML email on every status change',
+    ],
+    featured: true,
+  },
+  {
     id: 'insurance-app',
     tag: 'Mobile · Flutter',
     title: 'InsureFlow',
