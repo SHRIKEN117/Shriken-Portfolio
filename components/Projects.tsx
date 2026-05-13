@@ -153,15 +153,9 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4 mb-4">
-        {projects.filter((p) => p.featured).map((p, i) => (
+      <div className="grid md:grid-cols-2 gap-4">
+        {projects.map((p, i) => (
           <ProjectCard key={p.id} project={p} index={i} />
-        ))}
-      </div>
-
-      <div className="grid md:grid-cols-1 gap-4">
-        {projects.filter((p) => !p.featured).map((p, i) => (
-          <ProjectCard key={p.id} project={p} index={i + 2} />
         ))}
       </div>
     </section>
